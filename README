@@ -1,0 +1,10 @@
+Name:		fakeshell
+Description:	Set as user's shell to avoid entering into system
+Author:		Miroslav Osladil <xxlmira@gmail.com>
+
+To install, run:
+	make install
+
+To set as user's shell, run:
+	chsh -s ${PREFIX}/fakeshell
+
