@@ -9,23 +9,28 @@ CC=		gcc
 CPPFLAGS += \
 	-DPROVIDER='${PROVIDER}' \
 	-DADMINS='${ADMINS}' \
-	-DBANNER='"/etc/${BANNER}"'
+	-DBANNER='"${PREFIX}/etc/${BANNER}"'
 
 build: ${SRCS}
 	${CC} ${CPPFLAGS} -o ${PROG} ${SRCS}
 
 install: 
-	install -m 0755 ${PROG} ${PREFIX}/bin
-	install -m 0644 ${BANNER} /etc
+	install -o root -g bin -m 0755 ${PROG} ${PREFIX}/bin
 	@echo
-	@echo "Now, add ${PROG} to /etc/shells"
-	@echo "Example:"
-	@echo "  echo ${PREFIX}/bin/${PROG} >> /etc/shells"
+	@echo "Now, please process following:"
 	@echo
+	@echo "1. Add ${PROG} to /etc/shells"
+	@echo "   echo ${PREFIX}/bin/${PROG} >> /etc/shells"
+	@echo
+	@echo "2. Put your own banner message to ${PREFIX}/etc/${BANNER}
+	@echo "   cp banner ${PREFIX}/etc/${BANNER}"
+	@echo
+	@echo "3. Set as user's shell"
+	@echo "   chsh -s ${PREFIX}/bin/${PROG} username"
 
 uninstall:
 	rm -f ${PREFIX}/bin/${PROG}
-	rm -f /etc/${BANNER}
+	rm -f ${PREFIX}/etc/${BANNER}
 	@echo "Do not forget to remove shell from /etc/shells"
 
 clean:
