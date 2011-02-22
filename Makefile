@@ -22,7 +22,7 @@ install:
 	@echo "1. Add ${PROG} to /etc/shells"
 	@echo "   echo ${PREFIX}/bin/${PROG} >> /etc/shells"
 	@echo
-	@echo "2. Put your own banner message to ${PREFIX}/etc/${BANNER}
+	@echo "2. Put your own banner message to ${PREFIX}/etc/${BANNER}"
 	@echo "   cp banner ${PREFIX}/etc/${BANNER}"
 	@echo
 	@echo "3. Set as user's shell"
