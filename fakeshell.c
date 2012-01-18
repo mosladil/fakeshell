@@ -32,13 +32,10 @@ main(int argc)
 	{
 		c = getchar();
 		if(c == '\n')
-		{
-			printf("What do you think I am, a shell?\n");
-			time(&t);
-            printf("now date and time: %s", ctime(&t));
-			///fflush_all();
+		{   
+		    time(&t);
+			printf("Now it's:%s", ctime( &t ) );
 			fflush(stdout);
-
 
 		}
 	}

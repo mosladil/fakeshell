@@ -1,6 +1,9 @@
 Name:		fakeshell
 Description:	Set as user's shell to avoid entering into system
 Author:		Miroslav Osladil <xxlmira@gmail.com>
+            Meng Zhuo <mengzhuo1203@gmail.com>
+
+To configure, please edit the Makefile
 
 To install, run:
 	make install
