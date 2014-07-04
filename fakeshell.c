@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #define MAX_HOSTNAME	255
 
@@ -26,13 +27,16 @@ main(int argc)
 	printf("In case of any urgency, do not hesitate to contact us at %s.\n", ADMINS);
 
 	char c;
+	time_t t;
 	while(c != EOF)
 	{
 		c = getchar();
 		if(c == '\n')
-		{
-			printf("What do you think I am, a shell?\n");
+		{   
+		    time(&t);
+			printf("Now it's:%s", ctime( &t ) );
 			fflush(stdout);
+
 		}
 	}
 	return (0);
